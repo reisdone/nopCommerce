@@ -17,6 +17,8 @@ namespace Nop.Web.Areas.Admin.Validators.News
 
             RuleFor(x => x.Full).NotEmpty().WithMessage(localizationService.GetResource("Admin.ContentManagement.News.NewsItems.Fields.Full.Required"));
 
+            RuleFor(x => x.SeName).MaximumLength(400).WithMessage(string.Format(localizationService.GetResource("Admin.SEO.SeName.MaxLengthValidation"), 400));
+
             SetDatabaseValidationRules<NewsItem>(dbContext);
         }
     }

@@ -23,6 +23,7 @@ namespace Nop.Web.Areas.Admin.Validators.Vendors
 
                 return true;
             }).WithMessage(localizationService.GetResource("Admin.Vendors.Fields.PageSize.Positive"));
+            RuleFor(x => x.SeName).MaximumLength(400).WithMessage(string.Format(localizationService.GetResource("Admin.SEO.SeName.MaxLengthValidation"), 400));
 
             SetDatabaseValidationRules<Vendor>(dbContext);
         }

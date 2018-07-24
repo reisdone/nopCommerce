@@ -25,6 +25,8 @@ namespace Nop.Web.Areas.Admin.Validators.Blogs
                 .Must(x => x == null || !x.Contains("."))
                 .WithMessage(localizationService.GetResource("Admin.ContentManagement.Blog.BlogPosts.Fields.Tags.NoDots"));
 
+            RuleFor(x => x.SeName).MaximumLength(400).WithMessage(string.Format(localizationService.GetResource("Admin.SEO.SeName.MaxLengthValidation"), 400));
+
             SetDatabaseValidationRules<BlogPost>(dbContext);
 
         }

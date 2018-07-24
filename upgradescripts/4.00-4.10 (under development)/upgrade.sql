@@ -2014,7 +2014,10 @@ set @resources='
   </LocaleResource>
   <LocaleResource Name="Enums.Nop.Core.Domain.Orders.ShoppingCartType.Wishlist">
     <Value>Wishlist</Value>
-  </LocaleResource>  
+  </LocaleResource> 
+  <LocaleResource Name="Admin.SEO.SeName.MaxLengthValidation">
+    <Value>Search name maximum length is {0} characters</Value>
+  </LocaleResource>   
 </Language>
 '
 

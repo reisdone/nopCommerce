@@ -13146,6 +13146,9 @@
   <LocaleResource Name="Admin.SearchTermReport.Keyword">
     <Value>Keyword</Value>
   </LocaleResource>
+  <LocaleResource Name="Admin.SEO.SeName.MaxLengthValidation">
+    <Value>Search name maximum length is {0} characters</Value>
+  </LocaleResource>
   <LocaleResource Name="Admin.Settings.ReviewType">
     <Value>Review types</Value>
   </LocaleResource>
