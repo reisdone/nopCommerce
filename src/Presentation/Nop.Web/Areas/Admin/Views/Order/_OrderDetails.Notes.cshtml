@@ -1,4 +1,5 @@
 @model OrderModel
+@using System.Text.Encodings.Web
 
 <div class="panel-group">
     @await Component.InvokeAsync("AdminWidget", new { widgetZone = AdminWidgetZones.OrderDetailsNotesTop, additionalData = Model })
@@ -188,7 +189,7 @@
             };
             addAntiForgeryToken(postData);
 
-            $.ajax({
+             $.ajax({
                 cache:false,
                 type: "POST",
                 url: "@(Url.Action("OrderNoteAdd", "Order"))",
@@ -199,7 +200,7 @@
                     $('#addOrderNote').attr('disabled', false);
                 },
                 error:function (xhr, ajaxOptions, thrownError){
-                    alert('Failed to add order note.');
+                    alert('@Html.Raw(JavaScriptEncoder.Default.Encode(T("Admin.Orders.OrderNotes.Fields.Note.Validation").Text))');
                     $('#addOrderNote').attr('disabled', false);
                 }
             });

@@ -11670,6 +11670,9 @@
   <LocaleResource Name="Admin.Orders.OrderNotes.Fields.Note.Hint">
     <Value>Enter this order note message.</Value>
   </LocaleResource>
+  <LocaleResource Name="Admin.Orders.OrderNotes.Fields.Note.Validation">
+    <Value>Order note cannot be empty.</Value>
+  </LocaleResource>
   <LocaleResource Name="Admin.Orders.PdfInvoice">
     <Value>Invoice (PDF)</Value>
   </LocaleResource>

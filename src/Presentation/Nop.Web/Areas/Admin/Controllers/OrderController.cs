@@ -2755,6 +2755,12 @@ namespace Nop.Web.Areas.Admin.Controllers
             if (order == null)
                 return Json(new { Result = false });
 
+            if (string.IsNullOrEmpty(message))
+            {
+                Response.StatusCode = 500;
+                return Json(new { Result = false });
+            }
+
             //a vendor does not have access to this functionality
             if (_workContext.CurrentVendor != null)
                 return Json(new { Result = false });
