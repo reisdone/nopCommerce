@@ -3,6 +3,7 @@ using Nop.Web.Areas.Admin.Models.Blogs;
 using Nop.Core.Domain.Blogs;
 using Nop.Data;
 using Nop.Services.Localization;
+using Nop.Services.Seo;
 using Nop.Web.Framework.Validators;
 
 namespace Nop.Web.Areas.Admin.Validators.Blogs
@@ -25,10 +26,10 @@ namespace Nop.Web.Areas.Admin.Validators.Blogs
                 .Must(x => x == null || !x.Contains("."))
                 .WithMessage(localizationService.GetResource("Admin.ContentManagement.Blog.BlogPosts.Fields.Tags.NoDots"));
 
-            RuleFor(x => x.SeName).MaximumLength(400).WithMessage(string.Format(localizationService.GetResource("Admin.SEO.SeName.MaxLengthValidation"), 400));
+            RuleFor(x => x.SeName).MaximumLength(NopSeoDefaults.SearchEngineNameLength)
+                .WithMessage(string.Format(localizationService.GetResource("Admin.SEO.SeName.MaxLengthValidation"), NopSeoDefaults.SearchEngineNameLength));
 
             SetDatabaseValidationRules<BlogPost>(dbContext);
-
         }
     }
 }
