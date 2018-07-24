@@ -12,8 +12,8 @@ namespace Nop.Web.Areas.Admin.Validators.Topics
     {
         public TopicValidator(ILocalizationService localizationService, IDbContext dbContext)
         {
-            RuleFor(x => x.SeName).MaximumLength(NopSeoDefaults.SearchEngineNameLength)
-                .WithMessage(string.Format(localizationService.GetResource("Admin.SEO.SeName.MaxLengthValidation"), NopSeoDefaults.SearchEngineNameLength));
+            RuleFor(x => x.SeName).MaximumLength(NopSeoDefaults.ForumTopicLength)
+                .WithMessage(string.Format(localizationService.GetResource("Admin.SEO.SeName.MaxLengthValidation"), NopSeoDefaults.ForumTopicLength));
 
             SetDatabaseValidationRules<Topic>(dbContext);
         }
